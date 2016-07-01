@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="style/css" href="main.css" />
+        <title>GameDev Canvas Workshop</title>
+    </head>
+    <body>
+        <canvas id="myCanvas" width="480" height="320" ></canvas>
+        
+        <script>
+            //Javascript code here
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            //All the instructions are between the beginPath() and closePath() methods.
+//            ctx.beginPath();
+//            ctx.rect(20, 40, 50, 50); //the first two values specify the coordinates of                               the top left corner
+//                                     //while the second two specify the width and height
+//            
+//            ctx.fillStyle = "#FF0000";
+//            ctx.fill();
+//            ctx.closePath();
+//            
+//            //here's a piece of code for printing out a green circle. 
+//            //the most important part of the code above is the arc() method.
+//            //It takes six parameters: x and y coord, arc radius, start and end.
+//            //direction of drawing
+//            ctx.beginPath();
+//            ctx.arc(240, 160, 20, 0, Math.PI*2, false);
+//            ctx.fillStyle = "green";
+//            ctx.fill();
+//            ctx.closePath();
+//            
+//            //Instead of using fill() and filling the shapes with colors, we can use stroke() to only colour the outer stroke. 
+//            ctx.beginPath();
+//            ctx.rect(160, 10, 100, 40);
+//            ctx.strokeStyle = "rgba(0, 0, 255, 0.5)";
+//            ctx.stroke();
+//            ctx.closePath();
+            
+            // => Defining a drawing loop
+            var x = canvas.width/2;
+            var y = canvas.height-30;
+            //ball will be painted in the new position on every update.
+            var dx = 2;
+            var dy = -2;
+            
+            function draw(){
+                //drawing code
+                ctx.beginPath();
+                ctx.arc(x, y, 10, 0, Math.PI * 2);
+                ctx.fillStyle = "#0095DD";
+                ctx.fill();
+                ctx.closePath();
+                x += dx;
+                y += dy;
+            }
+            setInterval(draw, 10);
+            
+        </script>
+          
+    </body>
+</html>
